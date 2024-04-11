@@ -15,4 +15,6 @@ public interface AdminMapper extends BaseMapper<Admin> {
     Admin selectByPhone(@Param("phone") String phone);
 
     List<Admin> search(Params params);
+
+    Admin findByPhoneAndPassword(@Param("phone") String phone,@Param("password") String password);
 }

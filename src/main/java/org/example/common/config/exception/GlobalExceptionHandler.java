@@ -1,4 +1,4 @@
-package org.example.exception;
+package org.example.common.config.exception;
 
 import org.example.entity.Result;
 import org.slf4j.Logger;

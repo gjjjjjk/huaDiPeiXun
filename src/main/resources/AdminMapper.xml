@@ -9,8 +9,12 @@
         select * from admin where phone=#{phone}
     </select>
 
-    <select id="search" resultType="org.example.entity.AdminUser">
-        select * from p_admin_user
+    <select id="findByPhoneAndPassword" resultType="org.example.entity.Admin">
+        select * from admin where phone=#{phone} and password=#{password}
+    </select>
+
+    <select id="search" resultType="org.example.entity.Admin">
+        select * from admin
         <where>
             <if test="params != null and params.username!=null and params.username!='' ">
                 and username like concat('%',#{params.username},'%')

@@ -1,5 +1,8 @@
 package org.example.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,8 +13,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Admin {
-    private long id;
+
+    @TableId(value = "id",type = IdType.AUTO)
+    private Integer id;
+    @TableField("username")
     private String username;
+    @TableField("phone")
     private String phone;
     private String address;
     private String password;
